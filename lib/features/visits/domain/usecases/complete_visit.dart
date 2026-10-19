@@ -1,0 +1,14 @@
+import 'package:dartz/dartz.dart';
+import '../../../../core/errors/failures.dart';
+import '../entities/visit.dart';
+import '../repositories/visit_repository.dart';
+
+/// Completa una visita: inProgress → completed.
+class CompleteVisit {
+  const CompleteVisit(this._repository);
+
+  final VisitRepository _repository;
+
+  Future<Either<Failure, Visit>> call(String visitId) =>
+      _repository.transitionStatus(visitId, VisitStatus.completed);
+}

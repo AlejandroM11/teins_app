@@ -1,0 +1,40 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Estilo
+    prefer_single_quotes: true
+    always_declare_return_types: true
+    avoid_print: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_final_fields: true
+    prefer_final_locals: true
+    unnecessary_this: true
+    use_super_parameters: true
+
+    # Seguridad / correctitud
+    avoid_dynamic_calls: true
+    avoid_slow_async_io: true
+    cancel_subscriptions: true
+    close_sinks: true
+    unawaited_futures: true
+
+    # Clean code
+    avoid_empty_else: true
+    avoid_redundant_argument_values: true
+    directives_ordering: true
+    sort_pub_dependencies: false   # Desactivado para mantener orden por grupos
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.mocks.dart"
+    - build/**
+    - android/**
+    - ios/**
+  errors:
+    invalid_annotation_target: ignore
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
